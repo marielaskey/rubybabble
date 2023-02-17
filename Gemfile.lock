@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (5.17.0)
+    spellchecker (0.1.5)
+
+PLATFORMS
+  x64-mingw-ucrt
+
+DEPENDENCIES
+  minitest
+  spellchecker
+
+BUNDLED WITH
+   2.3.26
