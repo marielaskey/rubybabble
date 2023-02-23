@@ -5,13 +5,29 @@ require 'minitest/autorun'
 class Word::TestScore < MiniTest::Test
 
 def test_empty_word_should_have_score_of_zero
-end
+    word = Word.new
+    assert_equal(word.score, 0)
+    end
 
 def test_score_a_one_tile_word
-end
+    tile_group = TileGroup.new
+    tile_group.append(:A)
+    word = Word.new(tile_group)
+    assert_equal(word.score, 1)
+    end
 
 def test_score_a_word_with_multiple_different_tiles
-end
+    tile_group = TileGroup.new
+    tile_group.append(:J).append(:A).append(:M)
+    word = Word.new(tile_group)
+    assert_equal(word.score, 12)
+    end
 
 def test_score_a_word_with_recurring_tiles
+    tile_group = TileGroup.new
+    tile_group.append(:J).append(:E).append(:L).append(:L).append(:Y)
+    word = Word.new(tile_group)
+    assert_equal(word.score, 15)
+    end
+
 end
