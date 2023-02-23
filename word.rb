@@ -1,17 +1,19 @@
-class Word
+class Word < TileGroup
 
     attr_accessor :word
 
     # the initialize method is the constructor
 	def initialize
-        @word = Array.def new
+        super
         end
 
     # returns the sum of all points for the tiles this Word contains
     def score
         sum = 0
-        @points.each do |point|
-            sum += point
+        @tiles.each do |tile|
+            sum += Tile.points_for(tile)
             end
-            return sum if point > 0
+            return sum
         end
+
+    end

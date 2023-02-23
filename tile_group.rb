@@ -9,17 +9,17 @@ class TileGroup
 
     # appends a tile (as a symbol, e.g., :A, :B, :C, etc.) to the group.
     def append(tile)
-        tiles.append(tile)
+        @tiles.append(tile)
     end
 
      # removes a tile from the group.
     def remove(tile)
-        tiles.delete_at(tiles.index(tile))     
+        @tiles.delete_at(@tiles.index(tile))     
     end
 
     # returns a string that is the concatenation of all tiles' string values
     def hand
-       return tiles.to_s
+       return @tiles.to_s
     end
 
 end
