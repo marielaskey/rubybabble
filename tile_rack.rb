@@ -1,7 +1,5 @@
 class TileRack < TileGroup
 
-    attr_accessor :tiles
-
 	# the initialize method is the constructor
 	def initialize
         super
@@ -20,7 +18,14 @@ class TileRack < TileGroup
      # returns true if the rack has enough tiles to make the word represented
      # by the text parameter (which is a string)
     def has_tiles_for?(text)
-        if @tiles.length == 0
+        if text.length <= @tiles.size
+            characters = text.chars()
+            characters.each do |char|
+                symbol = char.upcase.to_sym
+                if not @tiles.include?(symbol)
+                    return false
+                end
+            end
             return true
             else
                 return false
@@ -32,8 +37,8 @@ class TileRack < TileGroup
         word = Word.new()
         characters = text.chars()
         characters.each do |char|
-            symbol = char.Uppercase.to_sym
-            super.remove(symbol)
+            symbol = char.upcase.to_sym     
+            remove(symbol)
             word.append(symbol)
             end
         return word
