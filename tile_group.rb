@@ -1,11 +1,15 @@
 class TileGroup
+
+    require 'spellchecker'
+    require 'tempfile'
+
 	# creates an accessor method name tiles that returns all tiles in the group.
 	attr_accessor :tiles
 
 	# the initialize method is the constructor
 	def initialize
         @tiles = Array.new
-        end
+    end
 
     # appends a tile (as a symbol, e.g., :A, :B, :C, etc.) to the group.
     def append(tile)

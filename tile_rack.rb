@@ -1,9 +1,12 @@
 class TileRack < TileGroup
 
+    require 'spellchecker'
+    require 'tempfile'
+
 	# the initialize method is the constructor
 	def initialize
         super
-        end
+    end
 
     # return the number of tiles needed to bring the rack back up to 7.  It is used 
     # to know how many tiles are required to replenish the rack.

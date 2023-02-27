@@ -1,11 +1,14 @@
 class Word < TileGroup
 
+    require 'spellchecker'
+    require 'tempfile'
+
     attr_accessor :word
 
     # the initialize method is the constructor
 	def initialize
         super
-        end
+    end
 
     # returns the sum of all points for the tiles this Word contains
     def score

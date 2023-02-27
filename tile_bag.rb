@@ -1,6 +1,9 @@
 class TileBag
 	# (optional) generator for getters/setters for our instance vars
 	attr_accessor :tiles
+    
+    require 'spellchecker'
+    require 'tempfile'
 
 	# the initialize method is the constructor
 	def initialize
