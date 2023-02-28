@@ -1,5 +1,6 @@
 class Word < TileGroup
 
+    require_relative 'tile_bag.rb'
     require 'spellchecker'
     require 'tempfile'
 
@@ -14,7 +15,7 @@ class Word < TileGroup
     def score
         sum = 0
         @tiles.each do |tile|
-            sum += Tile.points_for(tile)
+            sum += TileBag.points_for(tile)
             end
             return sum
         end
